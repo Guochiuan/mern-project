@@ -1,6 +1,6 @@
-# MERN stack Project: eCommerce Platform
+# ProShop eCommerce Platform (v2)
 
-by Guochiuan Wang
+> eCommerce platform built with the MERN stack & Redux.
 
 It is a full-featured shopping cart with PayPal & credit/debit payments.
 
