@@ -1,5 +1,7 @@
 # MERN stack Project: eCommerce Platform
 
+by Guochiuan Wang
+
 It is a full-featured shopping cart with PayPal & credit/debit payments.
 
 ## Features
