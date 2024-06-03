@@ -28,10 +28,12 @@ import ProductListScreen from "./screens/admin/ProductListScreen";
 import ProductEditScreen from "./screens/admin/ProductEditScreen";
 import UserListScreen from "./screens/admin/UserListScreen";
 import UserEditScreen from "./screens/admin/UserEditScreen";
+import AboutMeScreen from "./screens/AboutMeScreen";
 import store from "./store";
 import { Provider } from "react-redux";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
+// change the primary color  --bs-primary-rgb from 'bootstrap/dist/css/bootstrap.min.css';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -42,6 +44,7 @@ const router = createBrowserRouter(
         path="/search/:keyword/page/:pageNumber"
         element={<HomeScreen />}
       />
+      <Route path="/aboutMe" element={<AboutMeScreen />} />
       <Route path="/product/:id" element={<ProductScreen />} />
       <Route path="/cart" element={<CartScreen />} />
       <Route path="/login" element={<LoginScreen />} />

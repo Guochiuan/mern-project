@@ -1,5 +1,8 @@
+
+
 main {
   min-height: 80vh;
+  background: rgba(244, 218, 218, 0.5);
 }
 
 .rating span {

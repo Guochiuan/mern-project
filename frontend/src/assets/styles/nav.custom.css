@@ -1,0 +1,36 @@
+.brand {
+  color: 
+  #7ec260; /* Change this to your desired color */
+  font-size:x-large;
+  /* font-size: large; */
+  font-family: Arial;
+  margin-right: 1em;
+}
+
+
+
+
+.custom-nav {
+    color: 
+    #6af4a1; /* Change this to your desired color */
+    font-size:large;
+
+    margin-right: 1em;
+  }
+
+  .custom-nav2 {
+    color: 
+    #f5f1ef; /* Change this to your desired color */
+    font-size:large;
+
+    margin-right: 1em;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 20px; */
+    /* background-color: #1a1a1a;
+    color: #f5f1ef; */
+  }

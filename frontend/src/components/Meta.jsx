@@ -11,9 +11,9 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To ProShop',
-  description: 'We sell the best products for cheap',
-  keywords: 'electronics, buy electronics, cheap electroincs',
+  title: 'Welcome To Jack\'s E-Commerce Platform',
+  description: 'This platform is built with MERN stack. It is a full-stack e-commerce platform.',
+  keywords: 'E-Commerce Platform',
 };
 
 export default Meta;
