@@ -1,7 +1,5 @@
 # e-Commerce platform built with the MERN stack.
 
-by Guochiuan Wang
-
 It is a full-featured shopping cart with PayPal & credit/debit payments.
 
 ## Features
