@@ -2,6 +2,8 @@
 
 It is a full-featured shopping cart with PayPal & credit/debit payments.
 
+![screenshot](workflow.png)
+
 ## Features
 
 - Full featured shopping cart
