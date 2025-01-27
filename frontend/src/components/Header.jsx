@@ -19,7 +19,6 @@ const Header = () => {
 
   const [logoutApiCall] = useLogoutMutation();
 
-
   // const openInstruction = () => {
   //   window.open(
   //     "instruction.html",
@@ -47,9 +46,10 @@ const Header = () => {
       <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand class="navbar-brand" className="brand">
-              <img width="50px" height="50px"src={logo2}  alt="Shop" />
-              Jack's  E-Commerce Platform
+            <Navbar.Brand className="brand">
+              {/* <Navbar.Brand class="navbar-brand" className="brand"> */}
+              <img width="50px" height="50px" src={logo2} alt="Shop" />
+              Jack's E-Commerce Platform
             </Navbar.Brand>
           </LinkContainer>
 
@@ -72,7 +72,6 @@ const Header = () => {
             <strong>About Me</strong>
             </Nav.Link>
           </LinkContainer> */}
-          
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
