@@ -11,6 +11,12 @@ main {
   color: #f8e825;
 }
 
+.fixed-size-img {
+  width: 250px; /* Set your desired fixed width */
+  height: 250px; /* Set your desired fixed height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
 .rating-text {
   font-size: 0.8rem;
   font-weight: 600;
