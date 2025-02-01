@@ -2,6 +2,8 @@ import path from "path";
 import express from "express";
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
+// this package is removed from the project.
+// Please install it before testing this route.
 import { v2 as cloudinary } from "cloudinary";
 
 const router = express.Router();
