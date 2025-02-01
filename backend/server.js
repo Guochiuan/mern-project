@@ -8,8 +8,8 @@ import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 // import uploadRoutes from "./routes/uploadRoutes.js";
-import cloudinaryRoutes from "./routes/cloudinaryRoutes.js";
-// import cloudinaryMulterRoutes from "./routes/cloudinaryMulterRoutes.js";
+// import cloudinaryRoutes from "./routes/cloudinaryRoutes.js";
+import cloudinaryMulterRoutes from "./routes/cloudinaryMulterRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 const port = process.env.PORT || 5000;
@@ -27,8 +27,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 // app.use("/api/upload", uploadRoutes);
 // we can use local storage instead of cloudinary cloud storage
-app.use("/api/upload", cloudinaryRoutes);
-// app.use("/api/upload", cloudinaryMulterRoutes);
+// app.use("/api/upload", cloudinaryRoutes);
+app.use("/api/upload", cloudinaryMulterRoutes);
 
 app.get("/api/config/paypal", (req, res) =>
   res.send({ clientId: process.env.PAYPAL_CLIENT_ID })

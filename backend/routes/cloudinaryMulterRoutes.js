@@ -12,7 +12,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Set up Cloudinary storage
+// Set up multer storage
 const storage = multer.memoryStorage();
 const upload = multer({
   storage,
@@ -26,13 +26,11 @@ const upload = multer({
     ) {
       cb(null, true);
     } else {
-      cb(
-        new Error("Invalid file type. Only PNG and JPEG files are allowed."),
-        false
-      );
+      cb(new Error("Invalid file type. Only IMAGE files are allowed."), false);
     }
   },
 });
+
 const uploadSingleImage = upload.single("image");
 
 router.post("/", (req, res) => {
@@ -41,10 +39,25 @@ router.post("/", (req, res) => {
       return res.status(400).send({ message: err.message });
     }
 
-    res.status(200).send({
-      message: "Image uploaded successfully",
-      image: req.file.path,
-    });
+    // Upload to Cloudinary
+    cloudinary.uploader
+      .upload_stream(
+        {
+          // folder: "uploads",
+          public_id: `${req.file.fieldname}-${Date.now()}`,
+        },
+        (error, result) => {
+          if (error) {
+            return res.status(500).send({ message: error.message });
+          }
+
+          res.status(200).send({
+            message: "Image uploaded successfully",
+            image: result.secure_url,
+          });
+        }
+      )
+      .end(req.file.buffer);
   });
 });
 
