@@ -26,8 +26,13 @@ app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 // app.use("/api/upload", uploadRoutes);
-// we can use local storage instead of cloudinary cloud storage
+// we can use local storage to store uploaded image, if we dont't want to
+// use cloudinary cloud storage
+
 // app.use("/api/upload", cloudinaryRoutes);
+// this uses cloudinary cloud storage, but with multer-storage-cloudinary
+// package, which is currently being removed from the project.
+
 app.use("/api/upload", cloudinaryMulterRoutes);
 
 app.get("/api/config/paypal", (req, res) =>
@@ -36,9 +41,9 @@ app.get("/api/config/paypal", (req, res) =>
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
-  app.use("/uploads", express.static("/var/data/uploads"));
+  // app.use("/uploads", express.static("/var/data/uploads"));
+  // this is for cloudinaryRoutes.js
   // app.use("/uploads", express.static("/uploads"));
-  // app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
   app.get("*", (req, res) =>
@@ -47,6 +52,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   const __dirname = path.resolve();
   // app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+  // this is for cloudinaryRoutes.js
   app.get("/", (req, res) => {
     res.send("API is running....");
   });
