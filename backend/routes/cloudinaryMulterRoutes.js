@@ -51,9 +51,11 @@ router.post("/", (req, res) => {
             return res.status(500).send({ message: error.message });
           }
           // console.log(result);
+          const secureUrl =
+            result.secure_url || result.url.replace(/^http:\/\//i, "https://");
           res.status(200).send({
             message: "Image uploaded successfully",
-            image: result.url,
+            image: secureUrl,
           });
         }
       )
